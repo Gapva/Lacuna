@@ -1,0 +1,15 @@
+{
+    
+    "currentMap": "BadBoy",
+    "currentWorld": "DefaultWorld",
+
+    "sensitivity": 0.6,
+    "followFactor": 100,
+    "breakTime": 1,
+    "mapSpeed": 122,
+    "interpolationDistance": 100,
+
+    "pnote": "#3264ff",
+    "snote": "#32ff64"
+
+}

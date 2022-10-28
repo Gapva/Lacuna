@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=2]
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 0, 0.329193, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0.787037 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 9 )
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 180.0
+flatness = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 50.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="StreamTexture" id=12]
+flags = 23
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+flags_unshaded = true
+albedo_texture = SubResource( 12 )
+detail_enabled = true
+detail_blend_mode = 0
+detail_uv_layer = 0
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=13]
+material = SubResource( 4 )
+size = Vector3( 0.25, 0.25, 0 )
+
+[node name="nparticles" type="Spatial"]
+
+[node name="particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02 )
+cast_shadow = 0
+emitting = false
+amount = 25
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB( -2, -2, -0.25, 4, 4, 0.5 )
+local_coords = false
+process_material = SubResource( 11 )
+draw_pass_1 = SubResource( 13 )
