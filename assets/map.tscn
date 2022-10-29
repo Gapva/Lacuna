@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/cursor.svg" type="Texture" id=1]
 [ext_resource path="res://assets/lyrics.gd" type="Script" id=2]
 [ext_resource path="res://assets/handler.gd" type="Script" id=3]
 [ext_resource path="res://addons/godot-polyliner/Line3D/Line3D.gd" type="Script" id=4]
 [ext_resource path="res://assets/field.gd" type="Script" id=5]
+[ext_resource path="res://assets/flashlight.svg" type="Texture" id=6]
 
 [sub_resource type="Curve" id=20]
 min_value = -360.0
@@ -54,9 +55,25 @@ size = Vector3( 0.25, 0.25, 0 )
 
 [sub_resource type="BoxShape" id=10]
 
+[sub_resource type="DynamicFontData" id=12]
+font_path = "res://assets/comfortaa.ttf"
+
+[sub_resource type="DynamicFont" id=11]
+size = 32
+font_data = SubResource( 12 )
+
+[sub_resource type="PlaneMesh" id=17]
+
+[sub_resource type="SpatialMaterial" id=18]
+flags_unshaded = true
+params_blend_mode = 1
+params_depth_draw_mode = 1
+
+[sub_resource type="Environment" id=19]
+
 [sub_resource type="Shader" id=22]
 code = "shader_type spatial;
-render_mode skip_vertex_transform, cull_disabled, unshaded;
+render_mode skip_vertex_transform, unshaded;
 render_mode depth_draw_alpha_prepass;
 
 uniform float line_width = 0.1;
@@ -175,33 +192,17 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=23]
 shader = SubResource( 22 )
-shader_param/line_width = 0.1
+shader_param/line_width = 0.05
 shader_param/tangent_facing = false
 shader_param/rounded = true
 shader_param/uv_matches_width = true
 shader_param/tex_stretch = true
 shader_param/tex_scale = Vector2( 1, 1 )
-shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/color = Color( 1, 1, 1, 0 )
 shader_param/metallic = 0.0
 shader_param/specular = 0.5
 shader_param/roughness = 0.5
-shader_param/tube_normal = true
-
-[sub_resource type="DynamicFontData" id=12]
-font_path = "res://assets/comfortaa.ttf"
-
-[sub_resource type="DynamicFont" id=11]
-size = 32
-font_data = SubResource( 12 )
-
-[sub_resource type="PlaneMesh" id=17]
-
-[sub_resource type="SpatialMaterial" id=18]
-flags_unshaded = true
-params_blend_mode = 1
-params_depth_draw_mode = 1
-
-[sub_resource type="Environment" id=19]
+shader_param/tube_normal = false
 
 [node name="map" type="Spatial"]
 physics_interpolation_mode = 2
@@ -239,9 +240,13 @@ transform = Transform( 3.5, 0, 0, 0, 3.5, 0, 0, 0, 3, 0, 0, 0 )
 transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 10 )
 
-[node name="connect" type="Spatial" parent="field/cursor"]
-script = ExtResource( 4 )
-material = SubResource( 23 )
+[node name="flashlight" type="Sprite3D" parent="field/cursor"]
+transform = Transform( 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 0 )
+visible = false
+cast_shadow = 0
+billboard = 1
+render_priority = 99
+texture = ExtResource( 6 )
 
 [node name="bpm" type="Timer" parent="."]
 
@@ -294,6 +299,12 @@ render_priority = 100
 modulate = Color( 1, 1, 1, 0.392157 )
 text = "+"
 font = SubResource( 11 )
+
+[node name="connect" type="Spatial" parent="."]
+transform = Transform( 0.1875, 0, 0, 0, 0.1875, 0, 0, 0, 1, 0, 0, 0.01 )
+visible = false
+script = ExtResource( 4 )
+material = SubResource( 23 )
 
 [connection signal="area_entered" from="field/cursor/ccol" to="field" method="_on_ccol_area_entered"]
 [connection signal="timeout" from="bpm" to="." method="_on_bpm_timeout"]

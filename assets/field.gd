@@ -25,15 +25,14 @@ func _notification(nt):
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	OS.window_fullscreen = Settings.dict.full
-	if Settings.dict.cursortrail:
-		$cursor/particles.visible = true
-	
-	$cursor/connect.points = [Vector3(0,0,0),$cursor.global_translation]
+	$cursor/particles.visible = Settings.dict.cursortrail
+	$cursor/flashlight.visible = Settings.dict.flashlight
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		$cursor.translation.x += (event.relative.x * 0.09) *  Settings.dict.sens
 		$cursor.translation.y -= (event.relative.y * 0.09) *  Settings.dict.sens
+		$"../connect".points = [Vector3(0,0,0),-$cursor.global_translation]
 	if event.is_action_pressed("ui_cancel"):
 		OS.shell_open(ProjectSettings.globalize_path("user://setup.json"))
 		get_tree().quit()
@@ -42,6 +41,8 @@ func _input(event):
 	if event.is_action_pressed("recenter"):
 		$cursor.translation.x = 0
 		$cursor.translation.y = 0
+	if event.is_action_pressed("fullsc"):
+		OS.window_fullscreen = not OS.window_fullscreen
 
 func _process(delta):
 #	mvx = get_viewport().get_mouse_position().x / (get_viewport().get_visible_rect().size.x / 2)

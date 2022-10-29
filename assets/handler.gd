@@ -61,7 +61,7 @@ func _ready():
 	mapf.close()
 
 	if not map["name"]:
-		OS.alert("Please set up/add core/required files before running Lacuna","LacERRna")
+		OS.alert("Please set up/add core/required files before running Lacuna","Lacunalert")
 		OS.shell_open(ProjectSettings.globalize_path("user://"))
 
 	# setup
@@ -92,13 +92,26 @@ func _ready():
 	
 	Engine.time_scale = Settings.dict.mapspeed * 0.01
 	
-	# load audio
-#	var sfile = File.new()
-#	sfile.open("user://maps/" + Settings.dict.cmap + "/main." + ext,File.READ)
-#	$song.stream.set_data(sfile.get_buffer(sfile.get_len()))
-#	$song.stream.set_loop(false)
+	# create audio variables
+	var sfile = File.new()
+	var saud
 	
-	$song.stream = AudioStream.new()
+	# audio extension check
+	match ext.to_lower():
+		"mp3":
+			saud = AudioStreamMP3.new()
+		"ogg":
+			saud = AudioStreamOGGVorbis.new()
+		"wav":
+			saud = AudioStreamSample.new()
+		not "mp3" and not "ogg" and not "wav":
+			OS.alert("Invalid audio extension type for map '" + Settings.dict.cmap + "'","Lacunalert")
+	
+	# load audio
+	sfile.open("user://maps/" + Settings.dict.cmap + "/main." + ext,File.READ)
+	saud.data = sfile.get_buffer(sfile.get_len())
+	$song.stream = saud
+	$song.stream.set_loop(false)
 	
 	yield(get_tree().create_timer(Settings.dict.breaktime),"timeout")
 	
