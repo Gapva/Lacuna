@@ -22,3 +22,13 @@ To run the project without any errors, you will need to have:
 All of the items listed above are provided [here](https://github.com/Gapva/Lacuna/tree/main/templates)
 
 You need copy everything in the `templates` folder into the `%appdata%\Lacuna\` or `C:\Users\(yourusername)\AppData\Roaming\Lacuna\`
+
+# Frequently Asked
+> is there a mapper i can download
+No, not yet. Anyone is welcome to observe how `main.lacuna.json` files work and create a utility.
+
+> are there mapping docs
+No. They may or may not come.
+
+> something unexpected is happening with my game, or i encountered an error
+Create an [Issue](https://github.com/Gapva/Lacuna/issues/new/choose) detailing your problem.
