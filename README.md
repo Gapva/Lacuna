@@ -1,3 +1,7 @@
+# Current Version
+v0.0.1
+###### initial release
+
 # What is Lacuna?
 Lacuna is an open-source, highly customizable engine/algorithm for extensive Sound Space maps.
 
