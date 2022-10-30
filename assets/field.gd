@@ -90,3 +90,5 @@ func _on_ccol_area_entered(area):
 		if not area.get_parent().lyric == "":
 			$"../lyrics".text = area.get_parent().lyric
 			$"../lyrics".modulate.a = Settings.dict.lopac
+		if area.get_parent().flash:
+			$"../flash".modulate.a = Settings.dict.fopac

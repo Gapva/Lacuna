@@ -30,12 +30,14 @@ func _ready():
 	dict.fadedur = config["noteFade"] # how long notes will take (in seconds) before appearing
 	dict.lfade = config["lyricFadeDiv"] # how long lyrics will take (interpolation divisor) to disappear
 	dict.lopac = config["lyricOpacity"] # how opaque lyrics are
+	dict.ffade = config["flashFadeDiv"] # how long note flashes will take (interpolation divisor) to fade out
+	dict.fopac = config["flashOpacity"] # how opaque note flashes are
+	dict.fcolor = config["flashColor"] # color of note flashes
 	dict.spin = config["cursorSpin"] # how much the cursor spins (in units * delta) every _process call
 
 	# modifications
 	dict.mapspeed = config["mapSpeed"] # speed of the map, 100 = 100%
 	dict.flashlight = config["flashlight"] # "don't use with dementia" -frostlines
-	dict.ghost = config["ghost"] # notes fade out as they approach the cursor
 	dict.nomiss = config["noMiss"] # exit the game if you miss
 
 	# graphics & performance

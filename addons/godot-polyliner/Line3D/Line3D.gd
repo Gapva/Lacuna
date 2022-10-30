@@ -59,11 +59,9 @@ func _enter_tree():
 func _draw():
 	var length = uv_size
 	
-	print()
 	var start = OS.get_ticks_usec()
 	_mesh_instance.mesh = _linegen.draw_from_points_strip(points)
 	var end = OS.get_ticks_usec()
-	print( points.size(), " points, ", (end-start)*0.001, " ms" )
 
 var already_redrawn = false
 func redraw():

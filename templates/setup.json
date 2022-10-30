@@ -1,0 +1,31 @@
+{
+    
+    "currentMap":"DangerousSnippet",
+    "currentWorld":"DefaultWorld",
+
+    "sensitivity":0.6,
+    "followFactor":100,
+    "breakTime":1,
+    "interpolationDistance":200,
+    "noteFade":0.5,
+    "lyricFadeDiv":40,
+    "lyricOpacity":1,
+    "flashFadeDiv":40,
+    "flashOpacity":0.5,
+    "flashColor":"#ffffff",
+    "cursorSpin":360,
+
+    "mapSpeed":100,
+    "flashlight":false,
+    "noMiss":false,
+
+    "noteParticles":true,
+    "cursorTrail":false,
+    "fullscreen":false,
+
+    "pnote":"#3264ff",
+    "snote":"#32ff64",
+
+    "noteColors":["#15775c","#298ca5","#808e4d","#f9d9ff","#783f5f"]
+    
+}

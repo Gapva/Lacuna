@@ -1,0 +1,113 @@
+{
+
+    "name":"Dangerous Slot (Cut)",
+    "artist":"Laur",
+    "mappers":["pyrule","frostlines"],
+    "description":"You are not immune to propaganda! :grin:",
+    "extension":"mp3",
+    
+    "bpm":194,
+    "offset":1825,
+    
+    "notes":[
+        
+        {
+            "time":3.404,
+            "x":-1,
+            "y":1,
+            "angle":0,
+            "lyric":"",
+            "flash":false
+        },
+        {
+            "time":3.404,
+            "x":1,
+            "y":-1,
+            "angle":0,
+            "lyric":"",
+            "flash":false
+        },
+        {
+            "time":3.713,
+            "x":-1,
+            "y":-1,
+            "angle":0,
+            "lyric":"this",
+            "flash":true
+        },
+        {
+            "time":3.713,
+            "x":1,
+            "y":1,
+            "angle":0,
+            "lyric":"",
+            "flash":true
+        },
+        {
+            "time":4.33,
+            "x":-2,
+            "y":1,
+            "angle":-45,
+            "lyric":"is",
+            "flash":false
+        },
+        {
+            "time":4.369,
+            "x":-1,
+            "y":2,
+            "angle":-15,
+            "lyric":"",
+            "flash":false
+        },
+        {
+            "time":4.408,
+            "x":0,
+            "y":3,
+            "angle":0,
+            "lyric":"",
+            "flash":false
+        },
+        {
+            "time":4.445,
+            "x":1,
+            "y":2,
+            "angle":15,
+            "lyric":"",
+            "flash":false
+        },
+        {
+            "time":4.484,
+            "x":2,
+            "y":1,
+            "angle":45,
+            "lyric":"the",
+            "flash":false
+        },
+        {
+            "time":4.562,
+            "x":1,
+            "y":-2,
+            "angle":0,
+            "lyric":"",
+            "flash":false
+        },
+        {
+            "time":4.639,
+            "x":-1,
+            "y":2,
+            "angle":0,
+            "lyric":"test",
+            "flash":false
+        },
+        {
+            "time":4.948,
+            "x":0,
+            "y":0,
+            "angle":0,
+            "lyric":"map!",
+            "flash":true
+        }
+    
+    ]
+
+}

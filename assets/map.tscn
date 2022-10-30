@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/cursor.svg" type="Texture" id=1]
 [ext_resource path="res://assets/lyrics.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://addons/godot-polyliner/Line3D/Line3D.gd" type="Script" id=4]
 [ext_resource path="res://assets/field.gd" type="Script" id=5]
 [ext_resource path="res://assets/flashlight.svg" type="Texture" id=6]
+[ext_resource path="res://assets/flash.gd" type="Script" id=7]
 
 [sub_resource type="Curve" id=20]
 min_value = -360.0
@@ -270,6 +271,7 @@ valign = 1
 script = ExtResource( 2 )
 
 [node name="combo" type="Label" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -305,6 +307,12 @@ transform = Transform( 0.1875, 0, 0, 0, 0.1875, 0, 0, 0, 1, 0, 0, 0.01 )
 visible = false
 script = ExtResource( 4 )
 material = SubResource( 23 )
+
+[node name="flash" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
 
 [connection signal="area_entered" from="field/cursor/ccol" to="field" method="_on_ccol_area_entered"]
 [connection signal="timeout" from="bpm" to="." method="_on_bpm_timeout"]

@@ -35,8 +35,13 @@ func spawn(loc,i):
 	fnote.translation.x = loc["x"]
 	fnote.translation.y = loc["y"]
 	
-	fnote.lyric = loc["lyric"]
-		
+	if loc.has("lyric"):
+		fnote.lyric = loc["lyric"]
+	if loc.has("angle"):
+		fnote.rotation_degrees.z = -loc["angle"]
+	if loc.has("flash"):
+		fnote.flash = loc["flash"]
+	
 	self.add_child(fnote)
 	
 func smusic(ofst):
@@ -60,9 +65,10 @@ func _ready():
 	map = JSON.parse(mapf.get_as_text()).result
 	mapf.close()
 
-	if not map["name"]:
+	if not map:
 		OS.alert("Please set up/add core/required files before running Lacuna","Lacunalert")
 		OS.shell_open(ProjectSettings.globalize_path("user://"))
+		get_tree().quit()
 
 	# setup
 	sname = map["name"]
@@ -139,8 +145,8 @@ func _process(delta):
 #			iter += 1
 	if iter > len(total):
 		$field.misses = str(len(total) - $field.hits)
-	$hits.text = str($field.hits) + "/" + str(Settings.dict.ctotal) + " | " + str(Settings.dict.ctm) + " misses"
+	$hits.text = str($field.hits) + "/" + str(Settings.dict.ctotal) + " notes"
 	if $field.hits > 0:
 		var expr = Expression.new()
 		var _result = expr.parse($hits.text.split(" ")[0])
-		$combo.text = str(Settings.dict.cmb) + " combo"
+#		$combo.text = str(Settings.dict.cmb) + " combo"
