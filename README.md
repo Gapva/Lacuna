@@ -17,4 +17,4 @@ To run the project without any errors, you will need to have:
 
 All of the items listed above are provided [here](https://github.com/Gapva/Lacuna/tree/main/templates)
 
-You need copy everything in the `templates` folder into the `%appdata%\Lacuna\` or `C:\Users\**(yourusername)**\AppData\Roaming\Lacuna\`
+You need copy everything in the `templates` folder into the `%appdata%\Lacuna\` or `C:\Users\(yourusername)\AppData\Roaming\Lacuna\`
