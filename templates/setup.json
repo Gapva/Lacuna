@@ -21,7 +21,7 @@
 
     "noteParticles":true,
     "cursorTrail":false,
-    "fullscreen":false,
+    "fullscreen":true,
 
     "pnote":"#3264ff",
     "snote":"#32ff64",
