@@ -15,6 +15,6 @@ To run the project without any errors, you will need to have:
 - at least one map (directory with the map name and two files, `main.lacuna.json` and `main.mp3/ogg/wav`)
 - at least one world (`.tres` file of type `WorldEnvironment` from **Godot**)
 
-All of the items listed above are provided as examples/defaults [https://github.com/Gapva/Lacuna/tree/main/templates](here)
+All of the items listed above are provided as examples/defaults [here](https://github.com/Gapva/Lacuna/tree/main/templates)
 
 You need copy everything in the `templates` folder into the `%appdata%\Lacuna\` or `C:\Users\(yourusername)\AppData\Roaming\Lacuna\`
