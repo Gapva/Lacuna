@@ -1,6 +1,7 @@
 # Current Version
 v0.0.1
 ###### initial release
+Reminder that every time there is an update, `settings.json` probably changes. In this case, you'll need to replace your settings file or add the required dictionary items.
 
 # What is Lacuna?
 Lacuna is an open-source, highly customizable engine/algorithm for extensive Sound Space maps.
