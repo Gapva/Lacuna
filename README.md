@@ -21,6 +21,7 @@ To run the project without any errors, you will need to have:
 - at least one world (`.tres` file of type `WorldEnvironment` from **Godot**)
 
 All of the items listed above are provided [here](https://github.com/Gapva/Lacuna/tree/main/templates)
+**(You do NOT need the `.import` files)**
 
 You need copy everything in the `templates` folder into the `%appdata%\Lacuna\` or `C:\Users\(yourusername)\AppData\Roaming\Lacuna\`
 
