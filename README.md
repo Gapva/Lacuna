@@ -11,7 +11,7 @@ You must have a version of **Godot Engine Stable** that is the same or greater t
 After cloning this repository, add it to your **Godot** projects list, and open it.
 
 Once you are inside the project, try to run it. You will encounter a dictionary error.
-This is intentional, as it creates the user folder (`%appdata%\Lacuna\%`) *after* the dictionary checks occur.
+This is intentional, as it creates the user folder (`%appdata%\Lacuna\`) *after* the dictionary checks occur.
 
 To run the project without any errors, you will need to have:
 - a `maps` directory
